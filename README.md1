@@ -1,0 +1,16 @@
+This built-in Python module allows you to work with Comma-Separated Values (CSV) files.
+The script uses csv to save the extracted job data in a CSV format (job_data.csv).
+The code snippet with open('job_data.csv', 'w', newline='', encoding='utf-8') as csv_file: opens the CSV file for writing, sets newline handling, and specifies the character encoding.
+Later, writer.writerow(job) writes each job entry as a row in the CSV file.
+3. json
+
+Another built-in Python module used for working with JSON data.
+The script uses json to save the extracted job data in a JSON format (job_data.json).
+The code snippet with open('job_data.json', 'w') as json_file: opens the JSON file for writing.
+Later, json.dump(job_data, json_file, indent=4) dumps the retrieved data (stored in the job_data variable) into the JSON file with proper indentation for readability.
+
+# In summary:
+
+requests fetches data from the API.
+csv creates and writes the data to a CSV file.
+json creates and writes the data to a JSON file.
