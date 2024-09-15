@@ -1,16 +1,41 @@
-This built-in Python module allows you to work with Comma-Separated Values (CSV) files.
-The script uses csv to save the extracted job data in a CSV format (job_data.csv).
-The code snippet with open('job_data.csv', 'w', newline='', encoding='utf-8') as csv_file: opens the CSV file for writing, sets newline handling, and specifies the character encoding.
-Later, writer.writerow(job) writes each job entry as a row in the CSV file.
-3. json
+# Introduction
+This Python script is designed to fetch job data from the Active Jobs API and save the data in both JSON and CSV formats. The API allows you to search for jobs based on specific titles and locations. The script demonstrates how to handle API requests, parse the response, and store the data effectively in a structured format.
 
-Another built-in Python module used for working with JSON data.
-The script uses json to save the extracted job data in a JSON format (job_data.json).
-The code snippet with open('job_data.json', 'w') as json_file: opens the JSON file for writing.
-Later, json.dump(job_data, json_file, indent=4) dumps the retrieved data (stored in the job_data variable) into the JSON file with proper indentation for readability.
+# API URL and Parameters
+The **bold API URL** used to fetch the data is:
+[Active Jobs API](https://active-jobs-db.p.rapidapi.com/active-ats)
 
-# In summary:
+The **bold querystring** parameters are as follows:
+<!-- python code block -->
+python
+{
+    "title": "\"Data Engineer\"",
+    "location": "\"United States\""
+}
 
-requests fetches data from the API.
-csv creates and writes the data to a CSV file.
-json creates and writes the data to a JSON file.
+These parameters define the **boldjob title** and **boldlocation** we are searching for.
+
+# API Headers
+<!-- python code block -->
+python headers = {
+    "x-rapidapi-key": "your_api_key_here",
+    "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
+}
+**bold Important:** Make sure to replace `"your_api_key_here"` with your actual **bold API key**.
+
+# Making the API Request
+The following code sends a **bold GET request** to the API with the defined **bold URL, headers,** and **bold query parameters:**
+<!-- python code block -->
+python response = requests.get(url, headers=headers, params=querystring)
+
+This request is processed and returns a response containing job data.
+
+# Handling the Response
+After making the request, the response status is checked to ensure the request was successful:
+<!-- python code block -->
+python if response.status_code == 200:
+    job_data = response.json()
+If the response is successful (status code **200**), the data is converted into a **bold JSON object**.
+
+# Saving Data to JSON
+Once the data is retrieved, it is saved into a **JSON file** for further analysis:
