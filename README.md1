@@ -2,7 +2,7 @@
 This Python script is designed to fetch job data from the Active Jobs API and save the data in both JSON and CSV formats. The API allows you to search for jobs based on specific titles and locations. The script demonstrates how to handle API requests, parse the response, and store the data effectively in a structured format.
 
 # API URL and Parameters
-The **bold API URL** used to fetch the data is:
+The **API URL** used to fetch the data is:
 [Active Jobs API](https://active-jobs-db.p.rapidapi.com/active-ats)
 
 The **querystring** parameters are as follows:
@@ -13,7 +13,7 @@ python
     "location": "\"United States\""
 }
 
-These parameters define the **boldjob title** and **boldlocation** we are searching for.
+These parameters define the **job title** and **location** we are searching for.
 
 # API Headers
 <!-- python code block -->
@@ -21,7 +21,7 @@ python headers = {
     "x-rapidapi-key": "your_api_key_here",
     "x-rapidapi-host": "active-jobs-db.p.rapidapi.com"
 }
-**bold Important:** Make sure to replace `"your_api_key_here"` with your actual **bold API key**.
+**bold Important:** Make sure to replace `"your_api_key_here"` with your actual **API key**.
 
 # Making the API Request
 The following code sends a **bold GET request** to the API with the defined **bold URL, headers,** and **bold query parameters:**
@@ -35,10 +35,7 @@ After making the request, the response status is checked to ensure the request w
 <!-- python code block -->
 python if response.status_code == 200:
     job_data = response.json()
-If the response is successful (status code **200**), the data is converted into a **bold JSON object**.
+If the response is successful (status code **200**), the data is converted into a **JSON object**.
 
 # Saving Data to JSON
-
-<!-- Bold -->
-**bold**
 Once the data is retrieved, it is saved into a **JSON file** for further analysis:
