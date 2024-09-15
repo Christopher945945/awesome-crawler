@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 This Python script is designed to fetch job data from the Active Jobs API and save the data in both JSON and CSV formats. The API allows you to search for jobs based on specific titles and locations. The script demonstrates how to handle API requests, parse the response, and store the data effectively in a structured format.
 
 # API URL and Parameters
