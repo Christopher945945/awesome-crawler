@@ -39,9 +39,3 @@ If the response is successful (status code **200**), the data is converted into 
 
 # Saving Data to JSON
 Once the data is retrieved, it is saved into a **JSON file** for further analysis:
-<!-- python code block -->
-python
-{
-    "title": "\"Data Engineer\"",
-    "location": "\"United States\""
-}
