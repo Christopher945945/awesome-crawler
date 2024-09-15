@@ -39,4 +39,5 @@ If the response is successful (status code **200**), the data is converted into 
 
 # Saving Data to JSON
 <!-- Bold -->
+**bold**
 Once the data is retrieved, it is saved into a **JSON file** for further analysis:
